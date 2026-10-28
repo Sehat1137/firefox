@@ -583,6 +583,9 @@ toolbar[inactive="true"] .urlbar,
     flex-direction: column;
     position: fixed;
     position-anchor: --urlbar-anchor;
+    @media (-moz-platform: macos) and (not -moz-pref("layout.css.anchor-positioning.follows-transforms.enabled")) {
+      translate: 0 var(--fullscreen-menubar-shift, 0);
+    }
     /* The block-end row of the position area starts at the anchor's block-end
        edge, where span-block-end would start at its block-start edge. */
     position-area: block-end center;
